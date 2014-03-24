@@ -50,6 +50,7 @@
     <properties>
         <slf4j.version>1.7.6</slf4j.version>
         <java.version>1.7</java.version>
+        <gpg.sign.skip>true</gpg.sign.skip>
         <checkstyle.config>cz/cvut/fit/maven/codequality/checkstyle.xml</checkstyle.config>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -176,6 +177,29 @@
             </plugin>
 
             <!--
+                Sign the project artifacts with GnuPG.
+
+                Will be executed during deploy phase, not install.
+                Maven Central requires all artifacts to be signed.
+            -->
+            <plugin>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <configuration>
+                    <skip>${gpg.sign.skip}</skip>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--
                 Deploy artifacts to remote Maven repository.
 
                 This is explicitly defined here to enforce execution order *after* source, javadoc
@@ -286,6 +310,45 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+
+        <!--
+            Profile for deploying artifacts to Sonatype OSS / Maven Central.
+        -->
+        <profile>
+            <id>sonatype-deploy</id>
+
+            <properties>
+                <gpg.sign.skip>false</gpg.sign.skip>
+            </properties>
+
+            <distributionManagement>
+                <repository>
+                    <id>sonatype-staging</id>
+                    <name>Sonatype repository for staging releases for Maven Central</name>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+                </repository>
+
+                <snapshotRepository>
+                    <id>sonatype-snapshots</id>
+                    <name>Sonatype repository for deploying snapshots</name>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+            </distributionManagement>
+
+            <repositories>
+                <repository>
+                    <id>sonatype-nexus-snapshots</id>
+                    <name>Sonatype Nexus Snapshots</name>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
         </profile>
     </profiles>
 

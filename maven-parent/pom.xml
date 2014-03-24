@@ -107,7 +107,7 @@
             <!--
                 Deploy artifacts to remote Maven repository.
 
-                This is explicitly defined here to enforce execution order *after* gpg plugins.
+                This is explicitly defined here to enforce execution order *after* gpg plugin.
             -->
             <plugin>
                 <artifactId>maven-deploy-plugin</artifactId>
@@ -139,4 +139,30 @@
             </plugins>
         </pluginManagement>
     </build>
+
+
+    <!--//////////////////// PROFILES ////////////////////-->
+
+    <profiles>
+        <!--
+            Profile for deploying artifacts to Sonatype OSS / Maven Central.
+        -->
+        <profile>
+            <id>sonatype-deploy</id>
+
+            <distributionManagement>
+                <repository>
+                    <id>sonatype-staging</id>
+                    <name>Sonatype repository for staging releases for Maven Central</name>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+                </repository>
+
+                <snapshotRepository>
+                    <id>sonatype-snapshots</id>
+                    <name>Sonatype repository for deploying snapshots</name>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 </project>

@@ -313,6 +313,36 @@
         </profile>
 
         <!--
+            Profile for Travis CI.
+        -->
+        <profile>
+            <id>travis-ci</id>
+
+            <!-- Will be automatically activated on Travis CI. -->
+            <activation>
+                <property>
+                    <name>env.TRAVIS</name>
+                </property>
+            </activation>
+
+            <build>
+                <plugins>
+                    <!--
+                        Plugin for submitting code coverage reports to Coveralls.
+
+                        To get it work on Travis, add this line into your .travis.yml:
+                            after_success: 'mvn jacoco:report coveralls:jacoco -P travis-ci'
+                    -->
+                    <plugin>
+                        <groupId>org.eluder.coveralls</groupId>
+                        <artifactId>coveralls-maven-plugin</artifactId>
+                        <version>2.2.0</version>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!--
             Profile for deploying artifacts to Sonatype OSS / Maven Central.
         -->
         <profile>

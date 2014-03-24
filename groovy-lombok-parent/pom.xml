@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <prerequisites>
+        <maven>3.0</maven>
+    </prerequisites>
+
+    <parent>
+        <groupId>cz.cvut.fit.maven</groupId>
+        <artifactId>groovy-parent</artifactId>
+        <version>2.0-SNAPSHOT</version>
+        <relativePath>../groovy-parent/pom.xml</relativePath>
+    </parent>
+
+
+    <!--//////////////////// ABOUT ////////////////////-->
+
+    <artifactId>groovy-lombok-parent</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Groovy+Lombok Parent</name>
+    <description>Parent POM for FIT CTU's projects that uses Groovy (mainly for tests) and Lombok.</description>
+    <url>https://github.com/cvut/maven-support</url>
+
+
+    <!--//////////////////// PROPERTIES ////////////////////-->
+
+    <properties>
+        <lombok.version>1.12.6</lombok.version>
+    </properties>
+
+
+    <!--//////////////////// DEPENDENCIES ////////////////////-->
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+
+    <!--//////////////////// BUILD ////////////////////-->
+
+    <build>
+        <plugins>
+            <!--
+                Compile all classes with Groovy compiler and Lombok processor.
+            -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration >
+                    <fork>true</fork>
+                    <compilerArguments>
+                        <javaAgentClass>lombok.core.Agent</javaAgentClass>
+                    </compilerArguments>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                        <version>${lombok.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

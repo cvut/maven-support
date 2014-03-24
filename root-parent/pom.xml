@@ -21,6 +21,16 @@
     <description>Parent POM for FIT CTU's projects.</description>
     <url>https://github.com/cvut/maven-support</url>
 
+    <developers>
+        <developer>
+            <id>jirutjak</id>
+            <name>Jakub Jirutka</name>
+            <email>jirutjak@fit.cvut.cz</email>
+            <organization>CTU in Prague</organization>
+            <organizationUrl>http://www.cvut.cz</organizationUrl>
+        </developer>
+    </developers>
+
     <organization>
         <name>FIT CTU in Prague</name>
         <url>http://fit.cvut.cz</url>
@@ -28,6 +38,18 @@
 
 
     <!--//////////////////// DISTRIBUTION ////////////////////-->
+
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>http://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/cvut/maven-support</url>
+        <connection>scm:git:ssh://git@github.com:cvut/maven-support.git</connection>
+    </scm>
 
     <distributionManagement>
         <repository>

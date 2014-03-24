@@ -18,7 +18,7 @@
     <packaging>pom</packaging>
 
     <name>Maven parent</name>
-    <description>Parent for a support Maven artifacts.</description>
+    <description>Parent POM for a support Maven artifacts.</description>
     <url>https://github.com/cvut/maven-support</url>
     <inceptionYear>2012</inceptionYear>
 

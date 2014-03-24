@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>cz.cvut.fit.maven</groupId>
+        <artifactId>maven-parent</artifactId>
+        <version>2.0-SNAPSHOT</version>
+        <relativePath>../../maven-parent</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>servlet-api-bom</artifactId>
+    <version>3.0</version>
+    <packaging>pom</packaging>
+
+    <name>Servlet APIs BOM</name>
+    <description>Bill of materials with Java EE APIs provided by a Servlet Container.</description>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- JSR 245 Java Servlet -->
+            <dependency>
+                <groupId>javax.servlet.jsp</groupId>
+                <artifactId>javax.servlet.jsp-api</artifactId>
+                <version>2.2.1</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- JSR 250 Standard JavaEE Annotations -->
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>1.2</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- JSR 315 Java Servlet -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.0.1</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- JSR 341 Expression Language -->
+            <dependency>
+                <groupId>javax.el</groupId>
+                <artifactId>javax.el-api</artifactId>
+                <version>2.2.5</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- JSR 356 API for WebSocket -->
+            <dependency>
+                <groupId>javax.websocket</groupId>
+                <artifactId>javax.websocket-api</artifactId>
+                <version>1.0</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

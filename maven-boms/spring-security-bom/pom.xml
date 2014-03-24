@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>cz.cvut.fit.maven</groupId>
+        <artifactId>maven-parent</artifactId>
+        <version>2.0-SNAPSHOT</version>
+        <relativePath>../../maven-parent</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-security-bom</artifactId>
+    <version>3.2.2.RELEASE</version>
+    <packaging>pom</packaging>
+
+    <name>Spring Security BOM</name>
+    <description>Bill of materials for Spring Security.</description>
+    <url>http://spring.io/spring-security</url>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-bom</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>cz.cvut.fit.maven</groupId>
+                <artifactId>spring-ldap-bom</artifactId>
+                <version>2.0.1.RELEASE</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

@@ -20,6 +20,7 @@
         <module>root-parent</module>
         <module>groovy-parent</module>
         <module>groovy-lombok-parent</module>
+        <module>maven-boms</module>
     </modules>
 
 

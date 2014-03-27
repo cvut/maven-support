@@ -13,7 +13,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-security-bom</artifactId>
-    <version>3.2.2.RELEASE</version>
+    <version>3.2.3.RELEASE</version>
     <packaging>pom</packaging>
 
     <name>Spring Security BOM</name>

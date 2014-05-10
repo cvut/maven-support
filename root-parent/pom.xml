@@ -99,7 +99,6 @@
             -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
@@ -111,7 +110,6 @@
             -->
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>2.6</version>
             </plugin>
 
             <!--
@@ -119,7 +117,6 @@
             -->
             <plugin>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.12</version>
                 <configuration>
                     <configLocation>${checkstyle.config}</configLocation>
                     <consoleOutput>true</consoleOutput>
@@ -145,7 +142,6 @@
             -->
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.17</version>
                 <configuration>
                     <argLine>-Dfile.encoding=${project.build.sourceEncoding}</argLine>
                     <includes>
@@ -168,7 +164,6 @@
             -->
             <plugin>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>2.2.1</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -186,7 +181,6 @@
             -->
             <plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
                 <executions>
                     <execution>
                         <id>attach-javadoc</id>
@@ -206,7 +200,6 @@
             -->
             <plugin>
                 <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
                 <configuration>
                     <skip>${gpg.sign.skip}</skip>
                 </configuration>
@@ -230,7 +223,6 @@
             -->
             <plugin>
                 <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.8.1</version>
                 <executions>
                     <execution>
                         <id>deploy</id>
@@ -245,7 +237,23 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>2.12.1</version>
+                </plugin>
+
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>2.5</version>
+                </plugin>
+
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version>
+                </plugin>
+
+                <plugin>
                     <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.1</version>
                     <executions>
                         <!-- Disable execution of deploy plugin defined in super-pom to enforce our execution order. -->
                         <execution>
@@ -253,6 +261,59 @@
                             <phase>none</phase>
                         </execution>
                     </executions>
+                </plugin>
+
+                <plugin>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>2.17</version>
+                </plugin>
+
+                <plugin>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.5</version>
+                </plugin>
+
+                <plugin>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>2.5.1</version>
+                </plugin>
+
+                <plugin>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.9.1</version>
+                </plugin>
+
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.6</version>
+                </plugin>
+
+                <plugin>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.3</version>
+                </plugin>
+
+                <plugin>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.2.1</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>1.8</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.7.0.201403182114</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.eluder.coveralls</groupId>
+                    <artifactId>coveralls-maven-plugin</artifactId>
+                    <version>2.2.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -290,7 +351,6 @@
                     <plugin>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
-                        <version>0.7.0.201403182114</version>
                         <executions>
                             <execution>
                                 <id>pre-unit-test</id>
@@ -317,7 +377,6 @@
                     -->
                     <plugin>
                         <artifactId>maven-failsafe-plugin</artifactId>
-                        <version>2.17</version>
                         <configuration>
                             <argLine>-Dfile.encoding=${project.build.sourceEncoding} ${build.failsafe.argLine}</argLine>
                         </configuration>
@@ -352,7 +411,6 @@
                     <plugin>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
-                        <version>0.7.0.201403182114</version>
                         <executions>
                             <!-- Merge execution data for unit and integration tests. -->
                             <execution>
@@ -385,7 +443,6 @@
                     <plugin>
                         <groupId>org.eluder.coveralls</groupId>
                         <artifactId>coveralls-maven-plugin</artifactId>
-                        <version>2.2.0</version>
                     </plugin>
                 </plugins>
             </build>

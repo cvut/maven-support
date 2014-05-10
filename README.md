@@ -21,7 +21,7 @@ It’s preconfigured to deploy artifacts to [the faculty repository](https://rep
 ### Properties
 
 *  **java.version** ... Version of JDK to compile sources for (default is 1.7).
-*  **slf4j.version** ... Version of [slf4j-api] to use (default is 1.7.6).
+*  **slf4j.version** ... Version of [slf4j-api] to use (default is 1.7.7).
 
 ### Profiles
 
@@ -35,11 +35,26 @@ It’s preconfigured to deploy artifacts to [the faculty repository](https://rep
 
 Add this to the top of your POM:
 
-    <parent>
-        <groupId>cz.cvut.fit.maven</groupId>
-        <artifactId>root-parent</artifactId>
-        <version>2.0.0</version>
-    </parent>
+```xml
+<parent>
+    <groupId>cz.cvut.fit.maven</groupId>
+    <artifactId>root-parent</artifactId>
+    <version>2.0.0</version>
+</parent>
+```
+
+If you want to use Travis with Coveralls, put `.travis.yml` to the root of your repository:
+
+```yml
+language: java
+jdk:
+  - openjdk7
+  - oraclejdk8
+script:
+  - 'mvn verify -B'
+after_success:
+  - 'mvn jacoco:report coveralls:jacoco'
+```
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/cz.cvut.fit.maven/root-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/cz.cvut.fit.maven/root-parent)
 
@@ -60,21 +75,25 @@ Parent for projects that uses Groovy.
 
 Add this to the top of your POM:
 
-    <parent>
-        <groupId>cz.cvut.fit.maven</groupId>
-        <artifactId>groovy-parent</artifactId>
-        <version>2.0.0</version>
-    </parent>
+```xml
+<parent>
+    <groupId>cz.cvut.fit.maven</groupId>
+    <artifactId>groovy-parent</artifactId>
+    <version>2.0.0</version>
+</parent>
+```
 
 If you want to use Groovy in production code, not just in tests, then redefine the groovy’s dependency scope:
 
-    <dependencies>
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy</artifactId>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
+```xml
+<dependencies>
+    <dependency>
+        <groupId>org.codehaus.groovy</groupId>
+        <artifactId>groovy</artifactId>
+        <scope>compile</scope>
+    </dependency>
+</dependencies>
+```
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/cz.cvut.fit.maven/groovy-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/cz.cvut.fit.maven/groovy-parent)
 
@@ -93,11 +112,13 @@ Parent for projects that uses Groovy (mainly for tests) and [Lombok] annotation 
 
 Add this to the top of your POM:
 
-    <parent>
-        <groupId>cz.cvut.fit.maven</groupId>
-        <artifactId>groovy-lombok-parent</artifactId>
-        <version>2.0.0</version>
-    </parent>
+```xml
+<parent>
+    <groupId>cz.cvut.fit.maven</groupId>
+    <artifactId>groovy-lombok-parent</artifactId>
+    <version>2.0.0</version>
+</parent>
+```
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/cz.cvut.fit.maven/groovy-lombok-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/cz.cvut.fit.maven/groovy-lombok-parent)
 

@@ -72,7 +72,7 @@
     <properties>
         <slf4j.version>1.7.7</slf4j.version>
         <java.version>1.7</java.version>
-        <gpg.sign.skip>true</gpg.sign.skip>
+        <gpg.skip>true</gpg.skip>
         <checkstyle.config>cz/cvut/fit/maven/codequality/checkstyle.xml</checkstyle.config>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -199,9 +199,6 @@
             -->
             <plugin>
                 <artifactId>maven-gpg-plugin</artifactId>
-                <configuration>
-                    <skip>${gpg.sign.skip}</skip>
-                </configuration>
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
@@ -431,7 +428,7 @@
             <id>sonatype-deploy</id>
 
             <properties>
-                <gpg.sign.skip>false</gpg.sign.skip>
+                <gpg.skip>false</gpg.skip>
             </properties>
 
             <distributionManagement>

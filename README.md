@@ -10,9 +10,10 @@ All faculty projects should use one of these parents.
 root-parent
 -----------
 
-This is the root parent with basic plugins and profiles. It automatically checks Java code with [checkstyle] \(rules
-are defined in [checkstyle.xml]), runs integration tests, collects metrics for code coverage analysis (when **ci**
-profile enabled), deploys sources and JavaDocs in deploy phase etc.
+This is the root parent with basic plugins and profiles. It automatically checks classpath for duplicate classes with
+[duplicate-finder], checks Java code with [checkstyle] \(rules are defined in [checkstyle.xml]), runs integration tests,
+collects metrics for code coverage analysis (when **ci** profile enabled), deploys sources and JavaDocs in deploy phase
+etc.
 
 It’s preconfigured to deploy artifacts to [the faculty repository](https://repository.fit.cvut.cz/maven)
 ([more info][wiki-maven-repos]), but it also provides the profile _sonatype-deploy_ for deploying artifacts to
@@ -132,6 +133,7 @@ This project is licensed under [MIT license](http://opensource.org/licenses/MIT)
 <!-- Links -->
 
 [Bill of Materials]: http://howtodoinjava.com/2014/02/18/maven-bom-bill-of-materials-dependency/
+[duplicate-finder]: https://github.com/ning/maven-duplicate-finder-plugin
 [checkstyle]: http://checkstyle.sourceforge.net/
 [CI]: http://en.wikipedia.org/wiki/Continuous_integration
 [Coveralls]: https://coveralls.io/

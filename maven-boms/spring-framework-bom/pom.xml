@@ -10,7 +10,7 @@
 
     <groupId>cz.cvut.fit.maven</groupId>
     <artifactId>spring-framework-bom</artifactId>
-    <version>4.0.4.RELEASE</version>
+    <version>4.0.7.RELEASE</version>
     <packaging>pom</packaging>
 
     <name>Spring Framework BOM</name>

@@ -10,7 +10,7 @@
 
     <groupId>cz.cvut.fit.maven</groupId>
     <artifactId>spring-ldap-bom</artifactId>
-    <version>2.0.1.RELEASE</version>
+    <version>2.0.2.RELEASE</version>
     <packaging>pom</packaging>
 
     <name>Spring LDAP BOM</name>

@@ -40,7 +40,7 @@ Add this to the top of your POM:
 <parent>
     <groupId>cz.cvut.fit.maven</groupId>
     <artifactId>root-parent</artifactId>
-    <version>2.1.2</version>
+    <version>2.1.3</version>
 </parent>
 ```
 
@@ -80,7 +80,7 @@ Add this to the top of your POM:
 <parent>
     <groupId>cz.cvut.fit.maven</groupId>
     <artifactId>groovy-parent</artifactId>
-    <version>2.1.2</version>
+    <version>2.1.3</version>
 </parent>
 ```
 
@@ -117,7 +117,7 @@ Add this to the top of your POM:
 <parent>
     <groupId>cz.cvut.fit.maven</groupId>
     <artifactId>groovy-lombok-parent</artifactId>
-    <version>2.1.2</version>
+    <version>2.1.3</version>
 </parent>
 ```
 

@@ -48,6 +48,7 @@ If you want to use Travis with Coveralls, put `.travis.yml` to the root of your 
 
 ```yml
 language: java
+sudo: false
 jdk:
   - openjdk7
   - oraclejdk8

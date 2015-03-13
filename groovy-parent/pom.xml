@@ -23,7 +23,7 @@
     <packaging>pom</packaging>
 
     <name>Groovy Parent</name>
-    <description>Parent POM for FIT CTU's projects that uses Groovy (mainly for tests).</description>
+    <description>Parent POM for FIT CTU's projects that uses Groovy.</description>
     <url>https://github.com/cvut/maven-support</url>
 
 
@@ -64,6 +64,19 @@
                 <groupId>org.codehaus.groovy</groupId>
                 <artifactId>groovy-xml</artifactId>
                 <version>${groovy.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.spockframework</groupId>
+                <artifactId>spock-core</artifactId>
+                <version>${spock.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-all</artifactId>
+                    </exclusion>
+                </exclusions>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -22,7 +22,7 @@ It’s preconfigured to deploy artifacts to [the faculty repository](https://rep
 ### Properties
 
 *  **java.version** ... Version of JDK to compile sources for (default is 1.7).
-*  **slf4j.version** ... Version of [slf4j-api] to use (default is 1.7.10).
+*  **slf4j.version** ... Version of [slf4j-api] to use (default is 1.7.12).
 
 ### Profiles
 
@@ -40,7 +40,7 @@ Add this to the top of your POM:
 <parent>
     <groupId>cz.cvut.fit.maven</groupId>
     <artifactId>root-parent</artifactId>
-    <version>2.1.4</version>
+    <version>2.1.5</version>
 </parent>
 ```
 
@@ -81,7 +81,7 @@ Add this to the top of your POM:
 <parent>
     <groupId>cz.cvut.fit.maven</groupId>
     <artifactId>groovy-parent</artifactId>
-    <version>2.1.4</version>
+    <version>2.1.5</version>
 </parent>
 ```
 
@@ -118,7 +118,7 @@ Add this to the top of your POM:
 <parent>
     <groupId>cz.cvut.fit.maven</groupId>
     <artifactId>groovy-lombok-parent</artifactId>
-    <version>2.1.4</version>
+    <version>2.1.5</version>
 </parent>
 ```
 

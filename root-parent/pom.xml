@@ -526,6 +526,47 @@
         </profile>
 
         <!--
+            Profile for deploying artifacts to Bintray / jCenter (and Maven Central).
+        -->
+        <profile>
+            <id>bintray-deploy</id>
+
+            <properties>
+                <bintray.repo>cvut/maven</bintray.repo>
+                <bintray.package>${project.artifactId}</bintray.package>
+                <gpg.skip>false</gpg.skip>
+            </properties>
+
+            <distributionManagement>
+                <repository>
+                    <id>bintray-maven</id>
+                    <name>Bintray repository for releases going to jCenter (and Maven Central)</name>
+                    <url>https://api.bintray.com/maven/${bintray.repo}/${bintray.package}</url>
+                </repository>
+
+                <snapshotRepository>
+                    <id>jfrog-oss-snapshot-local</id>
+                    <name>JFrog OSS repository for deploying snapshots</name>
+                    <url>https://oss.jfrog.org/oss-snapshot-local</url>
+                </snapshotRepository>
+            </distributionManagement>
+
+            <repositories>
+                <repository>
+                    <id>jfrog-libs-snapshot</id>
+                    <name>JFrog OSS snapshots</name>
+                    <url>https://oss.jfrog.org/libs-snapshot</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
+
+        <!--
             Profile for deploying artifacts to Sonatype OSS / Maven Central.
         -->
         <profile>

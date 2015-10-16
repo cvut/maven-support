@@ -16,8 +16,9 @@ collects metrics for code coverage analysis (when **ci** profile enabled), deplo
 etc.
 
 It’s preconfigured to deploy artifacts to [the faculty repository](https://repository.fit.cvut.cz/maven)
-([more info][wiki-maven-repos]), but it also provides the profile _sonatype-deploy_ for deploying artifacts to
-[Sonatype OSS] / [Maven Central].
+([more info][wiki-maven-repos]), but it also provides profile _bintray-deploy_ for deploying artifacts to [Bintray] /
+[jCenter] \(a [pain-free gateway to Maven Central]) and _sonatype-deploy_ for deploying artifacts to [Sonatype OSS]
+\(a painful gateway to Maven Central).
 
 ### Properties
 
@@ -30,7 +31,8 @@ It’s preconfigured to deploy artifacts to [the faculty repository](https://rep
    on CI environments.
 *  **travis-ci** ... Profile for [Travis] to submit code coverage to [Coveralls]. This profile is for public projects
    only. It’s activated automatically on Travis.
-*  **sonatype-deploy** ... Profile for deploying artifacts to [Sonatype OSS] / [Maven Central].
+*  **bintray-deploy** ... Profile for deploying artifacts to Bintray.
+*  **sonatype-deploy** ... Profile for deploying artifacts to Sonatype OSS.
 
 ### Usage
 
@@ -137,13 +139,16 @@ This project is licensed under [MIT license](http://opensource.org/licenses/MIT)
 <!-- Links -->
 
 [Bill of Materials]: http://howtodoinjava.com/2014/02/18/maven-bom-bill-of-materials-dependency/
+[Bintray]: https://bintray.com/
 [duplicate-finder]: https://github.com/ning/maven-duplicate-finder-plugin
 [checkstyle]: http://checkstyle.sourceforge.net/
 [CI]: http://en.wikipedia.org/wiki/Continuous_integration
 [Coveralls]: https://coveralls.io/
 [FIT CTU]: http://fit.cvut.cz
+[jCenter]: https://bintray.com/bintray/jcenter/
 [JaCoCo]: http://www.eclemma.org/jacoco/
 [Maven Central]: http://search.maven.org/
+[pain-free gateway to Maven Central]: http://blog.bintray.com/2014/02/11/bintray-as-pain-free-gateway-to-maven-central/
 [Lombok]: http://projectlombok.org/
 [Sonatype OSS]: https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide
 [Travis]: https://travis-ci.org/

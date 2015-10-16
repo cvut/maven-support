@@ -1,9 +1,7 @@
-This repository contains parent POMs and [Bill of Materials] (BOM) for [FIT CTU]’s projects.
-
-
 Maven Parents
 =============
 
+This repository contains parent POMs for [FIT CTU]’s projects.
 All faculty projects should use one of these parents.
 
 

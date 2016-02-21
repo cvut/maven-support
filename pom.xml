@@ -10,11 +10,11 @@
 
     <groupId>cz.cvut.fit.maven</groupId>
     <artifactId>maven-support</artifactId>
-    <version>2.2.0</version>
+    <version>2.3.0</version>
     <packaging>pom</packaging>
 
     <name>Maven Support</name>
-    <description>Parent POMs and BOMs for FIT CTU's projects.</description>
+    <description>Parent POMs for FIT CTU's projects.</description>
     <url>https://github.com/cvut/maven-support</url>
     <inceptionYear>2012</inceptionYear>
 

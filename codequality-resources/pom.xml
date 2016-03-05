@@ -6,7 +6,7 @@
     <parent>
         <groupId>cz.cvut.fit.maven</groupId>
         <artifactId>maven-support</artifactId>
-        <version>2.3.0</version>
+        <version>2.3.1</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
